@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS `diet`;
+
+USE `diet`;
+
+DROP TABLE IF EXISTS `users`;
+/* Table stracture for users */
+CREATE TABLE `users` (
+  `USERNAME` varchar(30) NOT NULL,
+  `PASSWORD` varchar(50) NOT NULL,
+  `NAME` varchar(50) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
+  PRIMARY KEY (`USERNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+
+/* Filler users data for display purpose */
+
+INSERT INTO `users`(`USERNAME`, `PASSWORD`, `NAME`, `EMAIL`) VALUES
+('user1', '1234', 'Emma Roberts', 'emmaR@gmail.com'),
+('user2', '4567', 'Will Smith', 'blackwill@gmail.com'),
+('user3', '7890', 'Giorgos Marios', 'giorgosM@gmail.com'),
+('user4', '0123', 'Sophia Eat', 'sophianumnum@gmail.com'),
+('user5', '3456', 'Dimitri Blin', 'DIMITRIS@gmail.com');
+
+
+
+
+DROP TABLE IF EXISTS `messages`;
+/* Table stracture for messanges */
+CREATE TABLE `messages` (
+  `MSG_ID` INT(255) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(30) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
+  `SUBJECT` varchar(50) NOT NULL,
+  `MESSAGE` varchar(300) NOT NULL,
+  PRIMARY KEY (`MSG_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
